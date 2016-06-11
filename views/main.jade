@@ -1,0 +1,91 @@
+doctype
+head
+	title= page
+	meta(charset="utf-8")
+	link(href='/css.css', rel='stylesheet')
+	script(src='js/jquery-2.2.3.js')
+	script(src='js/misc.js')
+	script(src='js/SmoothScroll.js')
+
+	link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+body
+
+	nav.navbar-default.navbar-inverse( role="navigation" )
+		.navbar-header
+			a.navbar-brand(href="/") Alex Penkin
+
+		.collapse.navbar-collapse
+			ul.nav.navbar-nav
+				li.active: a( href="/") Главная
+				li: a( href="/chat" ) Чат
+				li: a( href="/about" ) Обо мне
+				li: a( href="/contacts" ) Контакты
+
+			ul.nav.navbar-nav.navbar-right
+				if(userInfo == undefined)
+					li.a: a( href="/login" ) Войти
+					li: a( href="/signup" ) Регистрация
+
+				else
+					li: p.navbar-text=  "Привет, "+ userInfo.user.username +"!"
+						li: a( href="/logout" ) Выйти
+
+	.jumbotron.row
+		.container.col-md-offset-4.col-xs-offset-4.col-xs-6
+			h1 Мой сайт портфолио
+
+			p Для показа того что я могу
+
+	.center-jm
+		.jm.pica
+			img.drag(src="/node.png")
+			br
+			p The raw HTML for the panel component is actually quite light on compared to the navbar component. We have just three div wrappers, with a total of four classes required to add the correct styling:
+		.jm.pica
+			img.drag(src="/js.png")
+			br
+			p The reason we’re creating a mixin for this component is to save you having to remember all four class names or how each of the required divs should be wrapping one another.
+		.jm.pica
+			img.drag(src="bootstrap.jpeg")
+			br
+			p In Internet Explorer 8-10, SVG images with .img-responsive are disproportionately sized. To fix this, add width: 100% \9; where necessary. Bootstrap doesn't apply this automatically as it causes complications to other image formats.
+	.container.row.col-md-3.col-md-offset-4.col-xs-offset-3.col-xs-6
+		p Оставте комментарий!
+		form(method= "post" action= "commentPost")
+			fieldset
+			if userInfo == undefined
+				.form-group
+					label(for= "userName") Введите имя или ник
+					input#userName.form-control(name="name" type="text" value= null)
+
+
+			.form-group
+				label(for= "commentBody") Ваш комментарий
+				input#commentBody.form-control(name="body" type="text" )
+
+				span
+					.form-group
+
+						button.btn.btn-primary(type='submit') Оставить комментарий
+
+						hr
+				p Комментарии:
+
+					- for comments in comment
+						.container.row
+							.container.table-bordered.col-md-4.col-xs-offset-0.col-xs-6.well.well-sm
+								p= comments.name + ' написал:'
+
+									.container-fluid1.clearfix.col-md-12.col-xs-offset-0.col-xs-12
+								p(style={marginleft: "0px"})= comments.body
+									hr
+
+
+
+	if (userInfo != undefined && userInfo.user.username == "Admin")
+		.container.col-md-6.form-group.col-md-offset-4.row.col-xs-offset-3.col-xs-6
+				form(method= "post" action= "removeLast")
+					button.btn.btn-primary(type='submit' ) Удалить последний комментарий
+
+
+				.container.row.center1

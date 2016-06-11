@@ -1,0 +1,23 @@
+doctype
+head
+    title= "login"
+    meta(charset="utf-8")
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+body
+    .table-bordered.col-md-4.col-md-offset-4
+        form(class='form-signin', action='/login', method='POST')
+            .form-group
+                label(for= "username") Логин
+                input#username.form-control(name= "username" type= "login" placeholder= "Login")
+                br
+            .form-group
+                    label(for= "pass") Пароль
+                    input#pass.form-control(name= "password" type= "password" placeholder= "Password")
+                    br
+                    .checkbox
+                            label(for = "sm")
+                            input#sm(type= "checkbox")
+                            | Запомнить меня
+                    .container.col-md-6.form-group.col-md-offset-4.row
+                            form(method= "post" action= "login")
+                            button.btn.btn-primary(type='submit') Залогиниться

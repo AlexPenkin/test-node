@@ -1,0 +1,22 @@
+doctype
+head
+    title= page
+    meta(charset="utf-8")
+    link(href='/css.css', rel='stylesheet')
+    script(src='js/jquery-2.2.3.js')
+    script(src='/misc.js')
+    script(src='/error.js')
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+body
+    .container.topcenter
+        form.topcenter(class ="postreg")
+            .form-group
+                label(for= "userName") Введите имя или ник
+                input#userName.form-control(name="username" type="text" )
+            .form-group
+                label(for= "pass") Пароль
+                input#pass.form-control(name="password" type="password" )
+            button.poster.btn.btn-primary(type='button' ) Зарегистрироваться
+
+.container
+p.error      

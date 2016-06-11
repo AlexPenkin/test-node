@@ -1,0 +1,97 @@
+body {
+    background-image: url(/ignasi_pattern_s.png);
+}
+.jumbotron {
+    background: url("/gradient.jpg") no-repeat center center;
+
+}
+html,body
+{
+    min-width: 600px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+.container-fluid1 {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+.center1 {
+    text-align: center;
+    color: red;
+}
+.imgpad {
+    padding-bottom: 10px;
+}
+.jumbotronNodeJs {
+     padding-top: 30px;
+     padding-bottom: 30px;
+     margin-bottom: 30px;
+     color: inherit;
+     height: 200px;
+     width: auto;
+     background: url("/node.png") no-repeat center center;
+
+ }
+.jumbotronJs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    height: 200px;
+    width: inherit;
+    background: url("js.png") no-repeat center center;
+    display: inline;
+
+}
+.jumbotronBs {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    height: 200px;
+    width: auto;
+    background: url("/bootstrap.jpeg") no-repeat center center;
+
+}
+.topcenter {
+    position: relative;
+    top: 40%;
+    margin: auto;
+    width: 30%;
+}
+.center-jm {
+
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: 40%;
+}
+.jm {
+display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+
+
+
+}
+.pica{
+padding-bottom: 20px;
+    width: 100%;
+height: 200px;
+
+
+}
+.drag {
+    padding-bottom: 20px;
+}

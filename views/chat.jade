@@ -1,0 +1,22 @@
+doctype
+head
+	title= page
+	meta(charset="utf-8")
+	link(href='/css.css', rel='stylesheet')
+	link(href='./css/chat.css', rel='stylesheet')
+	script(src='js/jquery-2.2.3.js')
+	script(src='./js/jquery.cookie.js')
+	script(src='/misc.js')
+	script(src='/error.js')
+	script(src='./js/socket.io.js')
+	script(src='./js/socket.js')
+	
+	link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous")
+	body
+		.chat
+			ul#messages
+			form.form(action='')
+				input#m(autocomplete="off")
+				input.btn(type = "submit" value = "Send")
+			.container
+			p.error    
